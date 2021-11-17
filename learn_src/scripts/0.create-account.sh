@@ -6,6 +6,6 @@ set -e
 [ -z "$CONTRACT" ] || echo "Found it! \$CONTRACT is set to [ $CONTRACT ]"
 
 
-near create-account $CONTRACT.hdsaleh.testnet --masterAccount hdsaleh.testnet --initialBalance 10
+near create-account $CONTRACT.hdsaleh.testnet --masterAccount hdsaleh.testnet --initialBalance 1
 
 exit 0
