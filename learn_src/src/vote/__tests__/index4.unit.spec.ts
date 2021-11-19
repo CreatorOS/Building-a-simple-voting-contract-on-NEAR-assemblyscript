@@ -4,6 +4,6 @@ describe("winningProposal", () => {
   it("gets the winning proposal", () => {
     VMContext.setSigner_account_id(process.env.get("user1"));
     const winningProposal = getWinningProposal();
-    expect(winningProposal).toBeTruthy();
+    expect(winningProposal).not.toBe("None");
   })
 })
