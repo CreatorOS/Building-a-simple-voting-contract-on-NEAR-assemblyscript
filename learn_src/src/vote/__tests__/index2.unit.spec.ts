@@ -1,11 +1,9 @@
-/*
 import { vote } from "../assembly";
 import { VMContext } from "near-sdk-as";
-import { TO_BE_SENT_FUNDS } from "../../utils";
 describe("vote", () => {
   it("allows users to vote", () => {
+    VMContext.setSigner_account_id(process.env.get("user1"));
     const voted = vote("proposal");
     expect(voted).toBeTruthy();
   })
 })
-*/

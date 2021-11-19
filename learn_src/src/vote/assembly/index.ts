@@ -14,7 +14,7 @@ export class Voter {
 }
 
 
-export const voters = new PersistentMap<string, Voter>("vo");
+export const voters = new PersistentMap<string, Voter>("t");
 export const proposalVotes = new PersistentMap<string, u32>("v");
 export const proposals = new PersistentVector<string>("p");
 
