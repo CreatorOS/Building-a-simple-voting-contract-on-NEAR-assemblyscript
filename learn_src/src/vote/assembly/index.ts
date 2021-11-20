@@ -29,11 +29,15 @@ export function addProposal(proposal: string): boolean {
 }
 
 export function createVoter(): boolean {
-    const voterNew = new Voter();
-    voterNew.vote = "None";
-    voterNew.voted = false;
-    voters.set(context.sender, voterNew);
-    return true;
+    const voted = voters.get(context.sender);
+    if (!voted) {
+        const voterNew = new Voter();
+        voterNew.vote = "None";
+        voterNew.voted = false;
+        voters.set(context.sender, voterNew);
+        return true;
+    }
+    return false;
 }
 
 //Vote for a proposal of your choice
