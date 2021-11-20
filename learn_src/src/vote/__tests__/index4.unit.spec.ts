@@ -1,9 +1,13 @@
-import { getWinningProposal } from "../assembly";
+import { vote, addProposal, createVoter } from "../assembly";
 import { VMContext } from "near-sdk-as";
-describe("winningProposal", () => {
-  it("gets the winning proposal", () => {
+describe("revoting", () => {
+  it("prohibits revoting", () => {
     VMContext.setSigner_account_id(process.env.get("user1"));
-    const winningProposal = getWinningProposal();
-    expect(winningProposal).not.toBe("None");
+    addProposal("proposal");
+    createVoter();
+    vote("proposal");
+    const voted = vote("proposal");
+    expect(voted).toBeFalsy();
   })
+
 })

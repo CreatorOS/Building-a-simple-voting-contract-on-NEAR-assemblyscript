@@ -32,3 +32,4 @@ user1=$(cat ./neardev/dev-account)
 touch user1.txt
 echo $user1 > user1.txt
 echo "user1: $user1"
+

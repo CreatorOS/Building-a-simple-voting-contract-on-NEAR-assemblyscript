@@ -1,3 +1,30 @@
 {
-    "todo": true
-}
+    "version": "1.0.0",
+    "defaultFile": "src/vote/assembly/index.ts",
+    "environment": "near-asm",
+    "setupCommands": [],
+    "compileCommand": "",
+    "tests": [
+      {
+        "itShould": "add a proposal",
+        "command": "sh learn_tests/01.sh"
+      },
+      {
+        "itShould": "create a voter",
+        "command": "sh learn_tests/02.sh"
+      },
+      {
+        "itShould": "allow users to vote",
+        "command": "sh learn_tests/03.sh"
+      },
+      {
+        "itShould": "prohibit revoting",
+        "command": "sh learn_tests/04.sh"
+      },
+      {
+        "itShould": "return the winning proposal",
+        "command": "sh learn_tests/05.sh"
+      }
+    ],
+    "learnerAccessibleFileList": ["src/cointoss/assembly/*"]
+  }

@@ -22,26 +22,33 @@ export const proposals = new PersistentVector<string>("p");
 export function addProposal(proposal: string): boolean {
     if (proposal != "None") {
         proposals.push(proposal);
+        proposalVotes.set(proposal, 0);
         return true;
     }
-
     return false;
+}
+
+export function createVoter(): boolean {
+    const voterNew = new Voter();
+    voterNew.vote = "None";
+    voterNew.voted = false;
+    voters.set(context.sender, voterNew);
+    return true;
 }
 
 //Vote for a proposal of your choice
 export function vote(proposalName: string): boolean {
     const voter = voters.getSome(context.sender);
     let proposal = proposalVotes.getSome(proposalName);
-    if (voter) {
+    if (voter.voted) {
         return false;
     }
     else {
-        const voterNew = new Voter();
-        voterNew.vote = proposalName;
-        voterNew.voted = true;
+        voter.vote = proposalName;
+        voter.voted = true;
         proposal = proposal + 1;
         proposalVotes.set(proposalName, proposal);
-        voters.set(context.sender, voterNew);
+        voters.set(context.sender, voter);
         return true;
     }
 }
