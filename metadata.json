@@ -26,5 +26,5 @@
       "command": "sh learn_tests/05.sh"
     }
   ],
-  "learnerAccessibleFileList": ["src/cointoss/assembly/*"]
+  "learnerAccessibleFileList": ["src/vote/assembly/*"]
 }
