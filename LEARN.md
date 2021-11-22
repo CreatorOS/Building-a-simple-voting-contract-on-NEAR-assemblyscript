@@ -6,7 +6,7 @@ Take a look at these imports from NEAR's AssemblyScript SDK. These should go in 
 ```ts
 import { context, PersistentMap, PersistentVector } from "near-sdk-as";
 ```
-Now let's write, you guessed it, the voting class. It has two fields: a boolean to indicate whether the voter has voted or hasn't, and a string that represents the proposal the voter has voted for.
+Now let's write the voting class. It has two fields: a boolean to indicate whether the voter has voted or hasn't, and a string that represents the proposal the voter has voted for.
 Your job is to:
 
 STEP 1 - initialize the voted field with false.
@@ -40,7 +40,7 @@ Now the fun begins. Let's write the contract's functionality!
 ## Starting with functionality - adding a proposal
 We need to write a function to add proposals. it should do two things: storing the proposal in the proposals list and initializing a key-value pair for it in proposalVotes map. You have two simple things to do:
 
-STEP 1 -push the proposal passed as a function parameter to the proposal list. Syntax: list.push(item)
+STEP 1 - push the proposal passed as a function parameter to the proposal list. Syntax: list.push(item)
 
 STEP 2 - store a new pair in proposalVotes map, it should take proposal as a key and zero as an initial value. Syntax: map.set(key,value);
 ```ts
@@ -56,7 +56,7 @@ export function addProposal(proposal: string): boolean {
 What now? Oh yes, we need to allow creating voter accounts.
 
 ## Moving on - creating a voter
-Not really complicated, we only have to create a Voter instance and store it in the voters map! We created an instance for you and initialized its fields. Now, set the new key-value pair in the voters map, context.sender is the key, you guess the value ;)
+This will not be complicated, we only have to create a Voter instance and store it in the voters map! We created an instance for you and initialized its fields. Now, set the new key-value pair in the voters map, context.sender is the key, you guess the value ;)
 
 STEP 1 - store the new pair in voters. Remember, map.set(key, value);
 ```ts
@@ -105,7 +105,7 @@ Two things for you my geeky friend:
 
 STEP 1 - update the value of highestVote.
 
-STEP 2 - update the value of winningProposals, remember, we store them in the proposals vector.
+STEP 2 - update the value of winningProposal, remember, we store proposals in the proposals vector.
 ```ts
 export function getWinningProposal(): string {
     let winningProposal = "None";
@@ -117,7 +117,7 @@ export function getWinningProposal(): string {
             /*STEP 2*/;
         }
     }
-    return winningProposal
+    return winningProposal;
 }
 ```
 And what do you know, we are done!
