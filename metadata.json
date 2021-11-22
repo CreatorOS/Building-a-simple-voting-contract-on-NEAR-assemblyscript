@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "defaultFile": "src/vote/assembly/index.ts",
   "environment": "near-asm",
-  "setupCommands": [". scripts/1.init.sh vote.wasm"],
-  "compileCommand": "yarn build:release || exit 1",
+  "setupCommands": [],
+  "compileCommand": ". scripts/1.init.sh vote.wasm",
   "tests": [
     {
       "itShould": "add a proposal",
