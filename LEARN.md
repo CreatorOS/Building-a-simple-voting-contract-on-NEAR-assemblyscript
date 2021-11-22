@@ -6,7 +6,7 @@ Take a look at these imports from NEAR's AssemblyScript SDK. These should go in 
 ```ts
 import { context, PersistentMap, PersistentVector } from "near-sdk-as";
 ```
-Now let's write, you guessed it, the voting class. It has two fields: a boolean to indicate whether the voter has voted or hasn't, and a string that represents the proposal the voter has voted for.
+Now let's write the voting class. It has two fields: a boolean to indicate whether the voter has voted or hasn't, and a string that represents the proposal the voter has voted for.
 Your job is to:
 
 STEP 1 - initialize the voted field with false.
@@ -56,7 +56,7 @@ export function addProposal(proposal: string): boolean {
 What now? Oh yes, we need to allow creating voter accounts.
 
 ## Moving on - creating a voter
-Not really complicated, we only have to create a Voter instance and store it in the voters map! We created an instance for you and initialized its fields. Now, set the new key-value pair in the voters map, context.sender is the key, you guess the value ;)
+This will not be complicated, we only have to create a Voter instance and store it in the voters map! We created an instance for you and initialized its fields. Now, set the new key-value pair in the voters map, context.sender is the key, you guess the value ;)
 
 STEP 1 - store the new pair in voters. Remember, map.set(key, value);
 ```ts
