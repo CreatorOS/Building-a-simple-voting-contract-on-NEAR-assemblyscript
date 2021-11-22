@@ -7,23 +7,23 @@
   "tests": [
     {
       "itShould": "add a proposal",
-      "command": ". learn_tests/01.sh"
+      "command": "sh learn_tests/01.sh"
     },
     {
       "itShould": "create a voter",
-      "command": ". learn_tests/02.sh"
+      "command": "sh learn_tests/02.sh"
     },
     {
       "itShould": "allow users to vote",
-      "command": ". learn_tests/03.sh"
+      "command": "sh learn_tests/03.sh"
     },
     {
       "itShould": "prohibit revoting",
-      "command": ". learn_tests/04.sh"
+      "command": "sh learn_tests/04.sh"
     },
     {
       "itShould": "return the winning proposal",
-      "command": ". learn_tests/05.sh"
+      "command": "sh learn_tests/05.sh"
     }
   ],
   "learnerAccessibleFileList": ["src/vote/assembly/*"]
