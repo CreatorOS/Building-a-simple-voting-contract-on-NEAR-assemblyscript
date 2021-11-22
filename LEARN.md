@@ -105,7 +105,7 @@ Two things for you my geeky friend:
 
 STEP 1 - update the value of highestVote.
 
-STEP 2 - update the value of winningProposals, remember, we store them in the proposals vector.
+STEP 2 - update the value of winningProposal, remember, we store proposals in the proposals vector.
 ```ts
 export function getWinningProposal(): string {
     let winningProposal = "None";
@@ -117,7 +117,7 @@ export function getWinningProposal(): string {
             /*STEP 2*/;
         }
     }
-    return winningProposal
+    return winningProposal;
 }
 ```
 And what do you know, we are done!
