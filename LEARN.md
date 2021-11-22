@@ -40,7 +40,7 @@ Now the fun begins. Let's write the contract's functionality!
 ## Starting with functionality - adding a proposal
 We need to write a function to add proposals. it should do two things: storing the proposal in the proposals list and initializing a key-value pair for it in proposalVotes map. You have two simple things to do:
 
-STEP 1 -push the proposal passed as a function parameter to the proposal list. Syntax: list.push(item)
+STEP 1 - push the proposal passed as a function parameter to the proposal list. Syntax: list.push(item)
 
 STEP 2 - store a new pair in proposalVotes map, it should take proposal as a key and zero as an initial value. Syntax: map.set(key,value);
 ```ts
