@@ -8,7 +8,9 @@ import { context, PersistentMap, PersistentVector } from "near-sdk-as";
 ```
 Now let's write, you guessed it, the voting class. It has two fields: a boolean to indicate whether the voter has voted or not, and a string that represents the proposal the voter has voted for.
 Your job is to:
+
 STEP 1 - set the voted field to false.
+
 STEP 2 - set the vote firld to the string value "None".
 ```ts
 export class Voter {
@@ -37,7 +39,9 @@ Now the fun begins, let's write the contract's functionality!
 
 ## Starting with functionality - adding a proposal
 We need to write a function to add proposals. it should basically do two things: storing the peoposal in the proposals list, and initialize a key-valye pair for it in proposalVotes map. You have two simple things to do:
+
 STEP 1 - push the proposal passed as a function parameter to proposal list. Syntax : list.push(item)
+
 STEP 2 - store a new pair in proposalVotes map, it should take proposal as a key and zero as an initial value. Syntax: map.set(key,value);
 ```ts
 export function addProposal(proposal: string): boolean {
@@ -53,6 +57,7 @@ What now? Oh yes, we need to allow creating voter accounts.
 
 ## Moving on - creating a voter
 Not really complicated, we only have to create a Voter instance and store in voters map! We created an instance for you and initialized its fields. Now, set the new key-value pair in te voters map, context.sender is the key, you guess the value ;)
+
 STEP 1 - store the new pair in voters. Remember, map.set(key, value);
 ```ts
 export function createVoter(): boolean {
@@ -70,8 +75,11 @@ export function createVoter(): boolean {
 ## The main guy - writing the voting functionality
 let's allow our users to vote! take a look at the function below.
 Three steps are left for you to implement:
+
 STEP 1 - fetch the Voter object associated with the caller's NEAR account ID.
+
 STEP 2 - change the boolean value of voted.
+
 STEP 3 - again, store the new pair in voters. the key is context.sender, butwhat is the value?
 ```ts
 export function vote(proposalName: string): boolean {
@@ -94,7 +102,9 @@ export function vote(proposalName: string): boolean {
 ## Last touches - getting the winning proposal
 We would like to know the result, right? Notice that we have not used the proposals vector yet, now we will!
 Two things for you my geeky friend:
+
 STEP 1 - update the value of highestVote.
+
 STEP 2 - update the value of winningProposals, remember, we store them in the proposals vector.
 ```ts
 export function getWinningProposal(): string {
