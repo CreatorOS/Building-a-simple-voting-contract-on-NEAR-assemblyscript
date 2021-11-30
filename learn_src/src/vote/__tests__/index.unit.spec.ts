@@ -3,19 +3,19 @@ import { VMContext } from "near-sdk-as";
 describe("Voting contract", () => {
 
   it("adds a proposal", () => {
-    VMContext.setSigner_account_id(process.env.get("user1"));
+    VMContext.setSigner_account_id("alice.testnet");
     const added = contract.addProposal("proposal");
     expect(added).toBeTruthy();
   })
 
   it("creates a voter", () => {
-    VMContext.setSigner_account_id(process.env.get("user1"));
+    VMContext.setSigner_account_id("alice.testnet");
     const created = contract.createVoter();
     expect(created).toBeTruthy();
   })
 
   it("allows users to vote", () => {
-    VMContext.setSigner_account_id(process.env.get("user1"));
+    VMContext.setSigner_account_id("alice.testnet");
     contract.addProposal("proposal");
     contract.createVoter();
     const voted = contract.vote("proposal");
@@ -23,7 +23,7 @@ describe("Voting contract", () => {
   })
 
   it("prohibits revoting", () => {
-    VMContext.setSigner_account_id(process.env.get("user1"));
+    VMContext.setSigner_account_id("alice.testnet");
     contract.addProposal("proposal");
     contract.createVoter();
     contract.vote("proposal");
@@ -32,7 +32,7 @@ describe("Voting contract", () => {
   })
 
   it("gets the winning proposal", () => {
-    VMContext.setSigner_account_id(process.env.get("user1"));
+    VMContext.setSigner_account_id("alice.testnet");
     contract.addProposal("proposal");
     contract.createVoter();
     contract.vote("proposal");
